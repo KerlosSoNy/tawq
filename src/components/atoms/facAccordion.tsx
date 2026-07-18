@@ -1,5 +1,6 @@
 "use client";
-
+import * as motion from "motion/react-client"
+import { Variants } from "motion/react";
 import { useId, useState } from "react";
 
 export interface FaqItem {
@@ -18,16 +19,24 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
     const toggle = (index: number) => {
         setOpenIndex((current) => (current === index ? null : index));
     };
-
+    const mainTitle: Variants = {
+        offscreen: { x: -300, opacity: 0 },
+        onscreen: {
+            x: 0,
+            opacity: 1,
+            transition: { type: "spring", bounce: 0.2, duration: 1 },
+        },
+    }
     return (
-        <div className="mx-auto  z-5 relative w-full">
+        <motion.div className="mx-auto  z-5 relative w-full">
             {items.map((item, index) => {
                 const isOpen = openIndex === index;
                 const panelId = `${baseId}-panel-${index}`;
                 const buttonId = `${baseId}-button-${index}`;
 
                 return (
-                    <div
+                    <motion.div
+                        variants={mainTitle}
                         key={index}
                         className={` border-gray-200 ${index === items.length - 1 ? "" : "border-b"
                             }`}
@@ -73,9 +82,9 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 );
             })}
-        </div>
+        </motion.div>
     );
 }

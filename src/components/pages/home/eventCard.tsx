@@ -1,5 +1,6 @@
 import Image from "next/image";
-
+import * as motion from "motion/react-client"
+import { Variants } from "motion/react";
 export default function EventCard({ event }: {
     event: {
         title: string;
@@ -7,8 +8,18 @@ export default function EventCard({ event }: {
         href: string;
     }
 }) {
+    const imageReveal: Variants = {
+        offscreen: { rotate: -20, z: -50, opacity: 0, scale: 0.8 },
+        onscreen: {
+            rotate: 0,
+            z: 0,
+            opacity: 1,
+            scale: 1,
+            transition: { type: "spring", bounce: 0.3, duration: 1.2 },
+        },
+    }
     return (
-        <div className="w-full h-158.5  rounded-xl overflow-hidden flex flex-col justify-end p-6 relative group">
+        <motion.div variants={imageReveal} className="w-full h-158.5  rounded-xl overflow-hidden flex flex-col justify-end p-6 relative group">
             <Image
                 fill
                 className="object-cover"
@@ -44,6 +55,6 @@ export default function EventCard({ event }: {
                     </svg>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }

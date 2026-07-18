@@ -1,15 +1,27 @@
 import Image from "next/image";
-
+import * as motion from "motion/react-client"
+import { Variants } from "motion/react";
 interface InstagramPost {
     username: string;
     imageUrl: string;
 }
 export default function PostCard({ post, type }: { post: InstagramPost, type: 'large' | 'medium' | 'small' }) {
+    const container: Variants = {
+        offscreen: { y: -100, x: -100, opacity: 0 },
+        onscreen: {
+            y: 0,
+            x: 0,
+            opacity: 1,
+            transition: { type: "spring", bounce: 0.6, duration: 1 },
+        },
+    }
     return (
-        <div className={`
-        shadow-[0_8px_16px_0_rgba(164,164,164,0.30)]
-        ${type === 'large' ? "w-77.5 h-97" : type === 'medium' ? "w-72.5 h-90.75" : "w-68.25 h-74"}
-        rounded-2xl bg-white p-2 shadow-md flex flex-col gap-2 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg sm:p-4`}>
+        <motion.div
+            variants={container}
+            className={`
+            shadow-[0_8px_16px_0_rgba(164,164,164,0.30)]
+            ${type === 'large' ? "w-77.5 h-97" : type === 'medium' ? "w-72.5 h-90.75" : "w-68.25 h-74"}
+            rounded-2xl bg-white p-2 shadow-md flex flex-col gap-2 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg sm:p-4`}>
             <div className="mb-2 flex items-center gap-1.5">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 16C4 10.3431 4 7.51472 5.75736 5.75736C7.51472 4 10.3431 4 16 4C21.6568 4 24.4853 4 26.2427 5.75736C28 7.51472 28 10.3431 28 16C28 21.6568 28 24.4853 26.2427 26.2427C24.4853 28 21.6568 28 16 28C10.3431 28 7.51472 28 5.75736 26.2427C4 24.4853 4 21.6568 4 16Z" stroke="#141B34" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -32,6 +44,6 @@ export default function PostCard({ post, type }: { post: InstagramPost, type: 'l
                     loading="lazy"
                 />
             </div>
-        </div>
+        </motion.div>
     );
 }

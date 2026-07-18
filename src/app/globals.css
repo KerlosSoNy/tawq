@@ -8,6 +8,7 @@
 
 @theme inline {
   --font-galderglynn: var(--font-Galderglynn);
+  --font-inter: var(--font-inter);
 
   --color-neutral-black: #15131A;
   --color-neutral-700: #1B1A1F;
@@ -121,13 +122,13 @@ body {
 
 
 .faqs-text {
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.50) -20.6%, rgba(224, 224, 224, 0.50) 100%);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.50) -10.6%, rgba(224, 224, 224, 0.50) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 .packages-text {
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.50) -50.6%, rgba(224, 224, 224, 0.50) 100%);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.50) -23.6%, rgba(224, 224, 224, 0.50) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -136,4 +137,8 @@ body {
 
 .filter-nav{
   filter: invert(34%) sepia(64%) saturate(338%) hue-rotate(132deg) brightness(102%) contrast(91%);
+}
+
+.packages-box-shadow{
+  box-shadow: 0 8px 16px 0 rgba(164, 164, 164, 0.30);
 }
