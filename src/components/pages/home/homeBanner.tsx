@@ -60,23 +60,23 @@ export default function HomeBanner() {
             initial="offscreen"
             whileInView="onscreen"
             variants={container}
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.5 }}
             className="w-screen h-screen relative pt-40 ">
-            <div className="ps-18 flex flex-col relative z-10">
+            <div className="ps-10 xl:ps-18 flex flex-col relative z-10">
 
-                <motion.div variants={mainTitle} className="text-[146px] font-galderglynn w-fit font-bold text-white leading-none tracking-tight">
+                <motion.div variants={mainTitle} className="text-[30px] md:text-[60px] lg:text-[80px] 2xxl:text-[120px] 3xl:text-[146px] font-galderglynn w-fit font-bold text-white leading-none tracking-tight">
                     WHERE WATER MEETS
-                    <span className="leading-none tracking-tight flex flex-wrap gap-4">
+                    <span className="leading-none tracking-tight flex flex-wrap gap-2 md:gap-4">
                         <span className="text-white">PURE</span>
                         <span
-                            className="text-transparent ms-4"
+                            className="text-transparent ms-1 md:ms-4"
                             style={{ WebkitTextStroke: "1.5px white" }}
                         >
                             EXCITEMENT.
                         </span>
                     </span>
                 </motion.div>
-                <motion.small variants={subTitle} className="max-w-108.75 font-normal text-white text-5 mt-20">
+                <motion.small variants={subTitle} className="max-w-108.75 font-normal text-white text-[14px] 3xl:text-5 mt-4 md:mt-12 3xl:mt-20">
                     Discover premium aquatic entertainment designed for unforgettable group gatherings, celebrations, and corporate escapes.
                 </motion.small>
             </div>
@@ -89,7 +89,7 @@ export default function HomeBanner() {
                 muted
                 className="w-full h-full absolute top-0 object-cover"
             />
-            <motion.div variants={socialMotion} className="absolute inset-s-20 bottom-27 z-10  bg-black/12 backdrop-blur-md rounded-2xl px-6 py-2 gap-5 flex flex-row items-center">
+            <motion.div variants={socialMotion} className="absolute inset-s-6 lg:inset-s-20 bottom-10 2xxl:bottom-15 3xl:bottom-27 z-10  bg-black/12 backdrop-blur-md rounded-2xl px-3 lg:px-6 py-1 lg:py-2 gap-5 flex flex-row items-center">
                 <Link href="#" aria-label="Instagram Page" className="w-11 h-11 flex items-center justify-center ">
                     <Image
                         src="/images/icons/insta.svg"
@@ -115,11 +115,11 @@ export default function HomeBanner() {
                     />
                 </Link>
             </motion.div>
-            <motion.svg variants={svgMotion} className="absolute inset-e-20 bottom-33.25 z-10" width="120" height="12" viewBox="0 0 120 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <motion.svg variants={svgMotion} className="absolute inset-e-6 lg:inset-e-20 bottom-14 2xxl:bottom-24 3xl:bottom-33.25 z-10" width="120" height="12" viewBox="0 0 120 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.750244 4.15267L17.37 9.15267L37.3136 0.819336L58.9193 10.8193L77.2009 2.486L100.469 9.15267L118.75 2.486" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
             </motion.svg>
-            <motion.div variants={socialMotion} className="absolute bottom-26 left-1/2 -translate-x-1/2 z-10 flex flex-col justify-center items-center gap-4.5">
-                <div className="bg-black/12 w-24.5 h-24.5 rotate-45 rounded-xl flex items-center justify-center backdrop-blur-md rounded-45">
+            <motion.div variants={socialMotion} className="absolute bottom-36 md:bottom-10 2xxl:bottom-20 3xl:bottom-26 left-1/2 -translate-x-1/2 z-10 flex flex-col justify-center items-center gap-2 3xl:gap-4.5">
+                <div className="bg-black/12 w-16 3xl:w-24.5 h-16 3xl:h-24.5 rotate-45 rounded-xl flex items-center justify-center backdrop-blur-md rounded-45">
                     <Image
                         src="/images/icons/smallHeroLogo.svg"
                         alt="Logo"
@@ -128,8 +128,8 @@ export default function HomeBanner() {
                         className="-rotate-45"
                     />
                 </div>
-                <div className="w-px h-42.75 border-l border-dashed border-white" />
-                <span className="uppercase font-bold text-5 text-white">Dive iN</span>
+                <div className="w-px h-25.75 3xl:h-42.75 border-l border-dashed border-white" />
+                <span className="uppercase font-bold text-[14px] 3xl:text-5 text-white">Dive iN</span>
             </motion.div>
             <div className="w-full absolute bottom-0 z-8 h-89.25 bg-linear-to-b from-primary-400/0 to-secondary2-400" />
         </motion.div>

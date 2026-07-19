@@ -19,9 +19,13 @@ export default function PackagesCarousel() {
     const [progress, setProgress] = useState(0);
 
     const totalSlides = PACKAGES.length;
-
+    const width = document.documentElement.clientWidth;
     const updateProgress = (swiper: any) => {
-        setProgress(((swiper.activeIndex + 1) / (totalSlides - 1)) * 100);
+        if (width < 620) {
+            setProgress(((swiper.activeIndex + 1) / (totalSlides)) * 100);
+        } else {
+            setProgress(((swiper.activeIndex + 1) / (totalSlides - 1)) * 100);
+        }
     };
 
     const mainContainer: Variants = {
@@ -49,7 +53,7 @@ export default function PackagesCarousel() {
     }
 
     return (
-        <motion.div className="w-full h-fit relative  mt-22">
+        <motion.div className="w-fit max-w-screen h-fit relative mb-20 lg:mb-0 mt-4 lg:mt-22">
             <div className="absolute -top-18 -left-22 w-42.5 h-42.5">
                 <motion.div variants={logo} className="w-full h-full relative">
                     <Image
@@ -59,8 +63,8 @@ export default function PackagesCarousel() {
                     />
                 </motion.div>
             </div>
-            <motion.div variants={mainContainer} className="flex flex-col relative z-10 overflow-visible">
-                <div className="w-207.5 h-105.25 overflow-visible relative">
+            <motion.div variants={mainContainer} className="w-fit max-w-[95vw] md:max-w-[91vw] flex flex-col relative z-10 overflow-visible">
+                <div className="w-full lg:w-100 xl:w-150 2xl:w-207.5 h-105.25 overflow-visible relative">
                     <div className="absolute -top-10 -left-10 w-56 h-56 bg-black/5 blur-3xl rounded-full" />
                     <div className="absolute top-1/2 -right-14 -translate-y-1/2 w-72 h-72 bg-black/10 blur-3xl rounded-full" />
                     <Swiper
@@ -68,6 +72,28 @@ export default function PackagesCarousel() {
                         onSwiper={updateProgress}
                         onSlideChange={updateProgress}
                         slidesPerView={2}
+                        breakpoints={{
+                            0: {
+                                slidesPerView: 1,
+                                spaceBetween: 32
+                            },
+                            640: {
+                                slidesPerView: 1.7,
+                                spaceBetween: 32
+                            },
+                            1024: {
+                                slidesPerView: 1,
+                                spaceBetween: 32
+                            },
+                            1280: {
+                                slidesPerView: 1.5,
+                                spaceBetween: 32
+                            },
+                            1440: {
+                                slidesPerView: 2,
+                                spaceBetween: 32
+                            }
+                        }}
                         spaceBetween={32}
                         className="py-5!"
                     >
@@ -145,31 +171,33 @@ export default function PackagesCarousel() {
                         }
                     </Swiper>
                 </div>
-                <div className="flex flex-row items-center mt-8">
+                <div className="flex flex-row items-center gap-10 mt-8">
                     <div className="flex-1 h-3  bg-neutral-300 overflow-hidden">
                         <div
                             className="h-full  bg-secondary-300 transition-all duration-300 ease-out"
                             style={{ width: `${progress}%` }}
                         />
                     </div>
-                    <button
-                        title="Prev Button"
-                        aira-label="Prev Button"
-                        onClick={() => packagesRef?.current?.swiper?.slidePrev()}
-                        className="w-10 h-10 flex items-center justify-center">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20 12H4M10 18L4 12L10 6" stroke="#A4A4A4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </button>
-                    <button
-                        title="Next Button"
-                        aira-label="Next Button"
-                        onClick={() => packagesRef?.current?.swiper?.slideNext()}
-                        className="w-10 h-10 flex items-center justify-center">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 12L20 12M14 6L20 12L14 18" stroke="#3B898A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </button>
+                    <div className="flex-row flex items-center">
+                        <button
+                            title="Prev Button"
+                            aira-label="Prev Button"
+                            onClick={() => packagesRef?.current?.swiper?.slidePrev()}
+                            className="w-10 h-10 flex items-center justify-center">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 12H4M10 18L4 12L10 6" stroke="#A4A4A4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </button>
+                        <button
+                            title="Next Button"
+                            aira-label="Next Button"
+                            onClick={() => packagesRef?.current?.swiper?.slideNext()}
+                            className="w-10 h-10 flex items-center justify-center">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 12L20 12M14 6L20 12L14 18" stroke="#3B898A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
 
                 </div>
             </motion.div>

@@ -19,7 +19,7 @@ export default function EventCard({ event }: {
         },
     }
     return (
-        <motion.div variants={imageReveal} className="w-full h-158.5  rounded-xl overflow-hidden flex flex-col justify-end p-6 relative group">
+        <motion.div variants={imageReveal} className="w-full h-80 lg:h-100 xl:h-120 2xl:h-140 3xl:h-158.5  rounded-xl overflow-hidden flex flex-col justify-end p-3 xl:p-6 relative group">
             <Image
                 fill
                 className="object-cover"
@@ -27,7 +27,7 @@ export default function EventCard({ event }: {
                 src={event.image}
             />
             <div className="flex flex-col absolute top-0 left-0 w-full h-full bg-linear-to-b opacity-40 from-black/50 to-secondary2-400"></div>
-            <span className='font-bold font-galderglynn text-1 group-hover:-translate-y-full group-hover:opacity-0 transition-all duration-500 flex flex-col text-white relative z-10'>
+            <span className='font-bold font-galderglynn text-3 lg:text-2 3xl:text-1 group-hover:-translate-y-full group-hover:opacity-0 transition-all duration-500 flex flex-col text-white relative z-10'>
                 {
                     event.title.split(' ').map((word, index) => (
                         <span key={index}>
@@ -37,7 +37,7 @@ export default function EventCard({ event }: {
                 }
             </span>
             <div className="translate-y-full group-hover:translate-y-0 mt-1 absolute top-0 left-0 w-full h-full z-4 bg-black/20 duration-700 transition-all flex flex-col items-center justify-center" >
-                <span className='font-bold font-galderglynn text-1 flex flex-col items-center text-center text-white/30 relative z-10'>
+                <span className='font-bold font-galderglynn text-2 3xl:text-1 flex flex-col items-center text-center text-white/30 relative z-10'>
                     {
                         event.title.split(' ').map((word, index) => (
                             <span key={index}>
@@ -47,7 +47,7 @@ export default function EventCard({ event }: {
                     }
                 </span>
                 <div className="flex flex-row items-center gap-2.5 cursor-pointer">
-                    <span className='font-galderglynn text-5 text-white'>
+                    <span className='font-galderglynn text-[14px] 3xl:text-5 text-white'>
                         DIVE in
                     </span>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

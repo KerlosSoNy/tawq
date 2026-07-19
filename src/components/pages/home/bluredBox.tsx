@@ -32,14 +32,14 @@ export default function BluredBox({
     return (
         <motion.div
             variants={box}
-            className={`w-full h-full bg-white/24 backdrop-blur-[20px] p-8 flex flex-col ${className}`}>
+            className={`w-full h-full max-h-120 md:max-h-140 gap-4 3xl:max-h-145.5 bg-white/24 backdrop-blur-[20px] p-3 xl:p-6 3xl:p-8 flex flex-col ${className}`}>
             {
                 icon
             }
-            <span className="font-bold font-galderglynn text-2 text-white">
+            <span className="font-bold font-galderglynn text-7 md:text-4 xl:text-3 3xl:text-2 text-white">
                 {title}
             </span>
-            <span className="font-bold text-5 text-white">
+            <span className="font-bold text-[12px] md:text-[14px] 3xl:text-5 text-white">
                 {description}
             </span>
         </motion.div>

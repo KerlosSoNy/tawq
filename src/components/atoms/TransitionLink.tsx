@@ -7,6 +7,7 @@ import { link } from '@/types/globals';
 
 interface Props {
     active?: boolean,
+    disableLinks?: boolean,
     link: link
     image?: boolean
     children?: React.ReactNode
@@ -30,7 +31,7 @@ const TransitionLink: FC<Props> = ({ active, link, children, onclick }) => {
         }}
             href={link.path}
             className={cn(
-                "text-white/60! mx-2.5 uppercase text-5 font-bold transition-colors duration-200",
+                "text-white/60! mx-2.5 uppercase text-[16px] 3xl:text-5 font-bold transition-colors duration-200",
                 "hover:text-white! hover:-mb-px hover:border-b hover:border-white",
                 {
                     "text-white! -mb-px border-b border-white": active

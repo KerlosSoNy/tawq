@@ -22,7 +22,7 @@ export default function page() {
   ];
 
   return (
-    <div className="font-bold text-[72px] text-black bg-white">
+    <div className="font-bold text-[72px] max-w-screen overflow-x-hidden text-black bg-white">
       <HomeBanner />
       <BigSection />
       <MidSection />

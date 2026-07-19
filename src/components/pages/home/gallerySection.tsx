@@ -75,24 +75,13 @@ export default function InstagramGallery({ posts }: InstagramGalleryProps) {
             initial="offscreen"
             whileInView="onscreen"
             variants={container}
-            viewport={{ once: true, amount: 0.5 }}
-            className="relative w-full overflow-hidden py-16 md:pb-24 pt-16" >
+            viewport={{ once: true, amount: 0.1 }}
+            className="relative w-full overflow-hidden 2xl:py-16 2xl:pb-24 3xl:pt-16" >
             <div className="relative mx-auto w-full">
-                {/* Mobile / Tablet: simple uniform grid */}
                 <div
-                    className="grid grid-cols-2 gap-3 px-2 sm:gap-4 md:grid-cols-4 md:gap-5 md:px-4 lg:hidden"
-                    style={{ minWidth: "110%", marginLeft: "-5%" }}
+                    className="flex gap-3 3xl:gap-6 ml-[-37%] md:ml-[-13%] 2xxl:ml-[-11%] 3xl:ml-[-10%] min-w-[125%] 2xxl:min-w-[120%] 3xl:min-w-[120%] lg:px-8 items-center"
                 >
-                    {displayPosts.map((post, i) => (
-                        <PostCard type="small" key={i} post={post} />
-                    ))}
-                </div>
-
-                <div
-                    className="hidden lg:flex lg:gap-6 lg:px-8 items-center"
-                    style={{ minWidth: "120%", marginLeft: "-10%" }}
-                >
-                    <div className="grid mt-[66.5px] grid-cols-1 gap-6">
+                    <div className="hidden 2xl:grid mt-[66.5px] grid-cols-1 gap-6">
                         {[left0].map((col, colIndex) => (
                             <div
                                 key={`left-${colIndex}`}
@@ -104,7 +93,7 @@ export default function InstagramGallery({ posts }: InstagramGalleryProps) {
                             </div>
                         ))}
                     </div>
-                    <div className="grid grid-cols-1 gap-6">
+                    <div className="hidden lg:grid grid-cols-1 gap-6">
                         {[left1].slice(0, 2).map((col, colIndex) => (
                             <div
                                 key={`left-${colIndex}`}
@@ -117,17 +106,17 @@ export default function InstagramGallery({ posts }: InstagramGalleryProps) {
                         ))}
                     </div>
 
-                    <div className="flex flex-1 shrink-0 flex-col gap-6 mt-11.5">
+                    <div className="flex flex-2 shrink-0 flex-col gap-6 mt-11.5">
                         <PostCard type="large" key="center-post-0" post={centerPosts[0]} />
                     </div>
-                    <div className="flex flex-1 shrink-0 flex-col gap-6">
+                    <div className="flex flex-2 shrink-0 flex-col gap-6">
                         <PostCard type="large" key="center-post-1" post={centerPosts[1]} />
                     </div>
-                    <div className="flex flex-1 shrink-0 flex-col gap-6 mt-11.5">
+                    <div className="flex flex-2 shrink-0 flex-col gap-6 mt-11.5">
                         <PostCard type="large" key="center-post-2" post={centerPosts[2]} />
                     </div>
 
-                    <div className="grid  grid-cols-1 gap-6">
+                    <div className="hidden lg:grid  grid-cols-1gap-6">
                         {[right1].slice(0, 2).map((col, colIndex) => (
                             <div
                                 key={`right-${colIndex}`}
@@ -139,7 +128,7 @@ export default function InstagramGallery({ posts }: InstagramGalleryProps) {
                             </div>
                         ))}
                     </div>
-                    <div className="grid mt-[66.5px] grid-cols-1  gap-6">
+                    <div className="hidden 2xl:grid mt-[66.5px] grid-cols-1  gap-6">
                         {[right0].slice(0, 2).map((col, colIndex) => (
                             <div
                                 key={`right-${colIndex}`}
@@ -154,9 +143,9 @@ export default function InstagramGallery({ posts }: InstagramGalleryProps) {
                 </div>
 
                 {/* Center Content Overlay */}
-                <div className="pointer-events-none -mt-32 inset-0 flex items-center justify-center">
+                <div className="pointer-events-none mt-4 lg:-mt-18 2xl:-mt-25 3xl:-mt-32 inset-0 flex items-center justify-center">
                     <div className="pointer-events-auto flex flex-col items-center text-center">
-                        <motion.h2 variants={mainTitle} className="text-neutral-black leading-24 font-galderglynn font-bold text-[80px]">
+                        <motion.h2 variants={mainTitle} className="text-neutral-black leading-14 md:leading-24 font-galderglynn font-bold text-[40px] md:text-[80px]">
                             <span className="block">Experiences</span>
                             <span className="block">Worth Sharing</span>
                         </motion.h2>
@@ -169,11 +158,11 @@ export default function InstagramGallery({ posts }: InstagramGalleryProps) {
                             Join us in celebrating the joy
                         </motion.p>
 
-                        <motion.p variants={smallDescription} className="max-w-140 mt-2 text-5 leading-8 font-normal text-neutral-black">
+                        <motion.p variants={smallDescription} className="max-w-140 px-2 mt-2 text-5 leading-8 font-normal text-neutral-black">
                             We invite you to follow us on Instagram and share your incredible experiences with our community! Your stories and photos inspire others to embark on their own adventures.
                         </motion.p>
 
-                        <motion.button whileHover={{ scale: 1.1 }} variants={button} className="relative w-59 h-14 mt-3 flex items-center gap-1.5 justify-center rounded-sm overflow-hidden group cursor-pointer">
+                        <motion.button whileHover={{ scale: 1.1 }} variants={button} className="relative w-59 h-14 mt-4 md:mt-3 flex items-center gap-1.5 justify-center rounded-sm overflow-hidden group cursor-pointer">
                             <span className="absolute inset-0 bg-linear-to-l from-primary-300 to-secondary-300" />
                             <span className="absolute inset-0 bg-linear-to-l from-secondary-300 to-secondary-300 opacity-0 group-hover:opacity-100 transition-opacity duration-600" />
                             <span className="relative z-10 uppercase text-5 font-bold text-white">Follow Us</span>

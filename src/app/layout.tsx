@@ -43,12 +43,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${Galderglynn.variable} ${inter.variable} font-inter h-full antialiased`}
+      className={`scroll-smooth ${Galderglynn.variable} ${inter.variable} font-inter h-full antialiased`}
     >
       <body className="min-h-full flex flex-col max-w-screen  overflow-x-hidden">
         {/* <SplashScreen /> */}
         <NetworkStatusBanner />
-        <ConsoleSilencer />
+        {/* <ConsoleSilencer /> */}
         <Navbar />
         <AnimationWrapper>
           {children}

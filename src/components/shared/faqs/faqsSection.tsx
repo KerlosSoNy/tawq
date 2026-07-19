@@ -42,18 +42,44 @@ export default function FaqsSection() {
             },
         },
     }
+    const faqsLetter: Variants = {
+        offscreen: { y: 80, opacity: 0, rotate: -8 },
+        onscreen: {
+            y: 0,
+            opacity: 1,
+            rotate: 0,
+            transition: { type: "spring", bounce: 0.35, duration: 0.9 },
+        },
+    }
+
     return (
         <motion.div
             key='Main-banner-container'
             initial="offscreen"
             whileInView="onscreen"
             variants={container}
-            viewport={{ once: false, amount: 0.5 }}
-            className="flex flex-col max-w-full overflow-hidden relative h-fit min-h-125 px-20 py-20">
-            <motion.span variants={mainTitle} className="font-galderglynn absolute -top-8 w-fit left-[7.5%] tracking-[285px] font-bold text-[300px] faqs-text">
-                faqs
-            </motion.span>
-            <div className="absolute w-195! h-210.75! top-24 right-40 z-10 -rotate-30 ">
+            viewport={{ once: true, amount: 0.5 }}
+            className="flex flex-col max-w-full overflow-hidden relative h-fit min-h-125 px-3 md:px-10 3xl:px-20 py-20">
+            <motion.div
+                variants={container}
+                className="font-galderglynn absolute -top-8 left-0 w-full flex justify-center items-center font-bold 
+                text-[42px] 
+                md:text-[250px] 
+                xl:text-[300px] faqs-text"
+            >
+                {"faqs".split("").map((letter, i) => (
+                    <motion.span
+                        key={i}
+                        variants={faqsLetter}
+                        className="inline-block mx-8.75 xl:mx-15 3xl:mx-[142.5px]"
+                    >
+                        {letter}
+                    </motion.span>
+                ))}
+            </motion.div>
+
+
+            <div className="absolute w-130! 3xl:w-195! h-210.75! xl:block hidden top-2 3xl:top-24 right-30 3xl:right-40 z-10 -rotate-30 ">
                 <motion.div variants={mainImage} className="relative w-full h-full">
                     <Image
                         fill
@@ -63,11 +89,11 @@ export default function FaqsSection() {
                     />
                 </motion.div>
             </div>
-            <motion.div className="flex flex-row items-center justify-evenly relative z-4 mb-6">
-                <motion.span variants={mainTitle} className='max-w-167.5 text-1 ms-10 font-galderglynn text-black'>
+            <motion.div className="flex flex-col md:flex-row items-center justify-between 3xl:justify-evenly relative z-4 mb-6">
+                <motion.span variants={mainTitle} className='md:max-w-167.5 text-3 md:text-2 3xl:text-1 xl:ms-10 font-galderglynn text-black'>
                     Frequently Asked Questions
                 </motion.span>
-                <motion.span variants={subTitle} className="max-w-115.25 text-5 ps-10 text-neutral-500">
+                <motion.span variants={subTitle} className="md:max-w-80 lg:max-w-100 xl:max-w-115.25 text-6 xl:text-5 md:ps-10 mt-4 md:mt-0 text-neutral-500">
                     Find answers to common questions about our services, bookings, and safety measures.
                 </motion.span>
             </motion.div>

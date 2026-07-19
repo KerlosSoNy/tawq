@@ -48,17 +48,17 @@ export default function Footer() {
             initial="offscreen"
             whileInView="onscreen"
             variants={container}
-            viewport={{ once: false, amount: 0.5 }}
-            className='py-15.5 px-31 flex flex-col w-full bg-[#f3f3f3]'>
-            <div className="flex flex-row gap-26.5 justify-between items-start">
-                <div className="flex flex-row items-start gap-3">
+            viewport={{ once: true, amount: 0.5 }}
+            className='py-10 px-5 sm:px-8 md:px-8 lg:py-15.5 3xl:px-31 gap-6 flex flex-col w-full bg-[#f3f3f3]'>
+            <div className="flex flex-col lg:flex-row gap-10 3xl:gap-26.5 justify-between items-center lg:items-start">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3">
                     <motion.div variants={subImage}>
                         <Image
                             src='/images/logos/footerLogo.png'
                             width={259}
                             height={146}
                             alt='Footer Logo'
-                            className='object-contain me-3'
+                            className='object-contain me-3 w-32 sm:w-28 md:w-36 3xl:w-64.75 h-auto'
                         />
                     </motion.div>
                     <motion.div variants={mainImage}>
@@ -67,45 +67,45 @@ export default function Footer() {
                             width={470}
                             height={466}
                             alt='Footer Logo'
-                            className='object-contain me-3'
+                            className='object-contain xl:block hidden me-3 w-44 sm:w-48 2xl:w-74 3xl:w-117.5 h-auto'
                         />
                     </motion.div>
                 </div>
-                <div className="flex flex-row items-start gap-6.5">
-                    <motion.div variants={socialMotion} className="flex flex-col gap-2 min-w-64.5">
-                        <span className='font-galderglynn text-neutral-black text-3 font-bold'>Quick Links</span>
+                <div className="flex flex-row flex-wrap md:flex-nowrap justify-center md:justify-between items-start gap-8 sm:gap-10 lg:gap-6.5 w-full lg:w-auto">
+                    <motion.div variants={socialMotion} className="flex flex-col gap-2 w-full sm:w-auto md:min-w-42.5 xl:min-w-52.5 3xl:min-w-64.5">
+                        <span className='font-galderglynn text-neutral-black text-5 3xl:text-3 font-bold'>Quick Links</span>
                         <div className="flex flex-col gap-2">
                             {quickLinks.map((link) => (
                                 <Link
                                     key={link.label}
                                     href={link.href}
-                                    className="p-2 text-5 text-neutral-500"
+                                    className="p-2 text-[14px] 3xl:text-5 text-neutral-500"
                                 >
                                     {link.label}
                                 </Link>
                             ))}
                         </div>
                     </motion.div>
-                    <motion.div variants={socialMotion} className="flex flex-col gap-2 min-w-64.5">
-                        <span className='font-galderglynn text-neutral-black text-3 font-bold'>Support</span>
+                    <motion.div variants={socialMotion} className="flex flex-col 2xl:gap-2 w-full sm:w-auto md:min-w-42.5 xl:min-w-52.5 3xl:min-w-64.5">
+                        <span className='font-galderglynn text-neutral-black text-5 3xl:text-3 font-bold'>Support</span>
                         <div className="flex flex-col gap-2">
                             {supportLinks.map((link) => (
                                 <Link
                                     key={link.label}
                                     href={link.href}
-                                    className="p-2 text-5 text-neutral-500"
+                                    className="p-2 text-[14px] 2xl:text-5 text-neutral-500"
                                 >
                                     {link.label}
                                 </Link>
                             ))}
                         </div>
                     </motion.div>
-                    <motion.div variants={socialMotion} className="flex flex-col gap-3 min-w-66.25">
-                        <span className='font-galderglynn text-neutral-black text-3 font-bold'>Contact us</span>
+                    <motion.div variants={socialMotion} className="flex flex-col gap-3 w-full sm:w-auto md:min-w-42.5 xl:min-w-52.5 3xl:min-w-66.25">
+                        <span className='font-galderglynn text-neutral-black text-5 3xl:text-3 font-bold'>Contact us</span>
                         <div className="flex flex-col gap-6">
                             {contactInfo.map((item) => (
                                 <div key={item.label} className="flex flex-row items-center gap-4">
-                                    <div className="flex items-center justify-center bg-primary-300 w-10 h-10 rounded-sm">
+                                    <div className="flex items-center justify-center bg-primary-300 w-10 h-10 shrink-0 rounded-sm">
                                         <Image
                                             src={item.icon}
                                             alt="Tawq Logo"
@@ -114,18 +114,18 @@ export default function Footer() {
                                         />
                                     </div>
                                     <div className="flex flex-col items-start ">
-                                        <span className="text-neutral-500 text-6">
+                                        <span className="text-neutral-500 text-[14px] 3xl:text-6">
                                             {item.label}
                                         </span>
                                         {item.href ? (
                                             <Link
                                                 href={item.href}
-                                                className="font-bold font-galderglynn text-5 text-neutral-black -mt-0.5"
+                                                className="font-bold font-galderglynn text-[12px] 3xl:text-5 text-neutral-black 2xl:-mt-0.5"
                                             >
                                                 {item.value}
                                             </Link>
                                         ) : (
-                                            <span className="font-bold font-galderglynn text-5 text-neutral-black -mt-0.5">
+                                            <span className="font-bold font-galderglynn text-[14px] 3xl:text-5 text-neutral-black 2xl:-mt-0.5">
                                                 {item.value}
                                             </span>
                                         )}
@@ -136,8 +136,8 @@ export default function Footer() {
                     </motion.div>
                 </div>
             </div>
-            <motion.div variants={socialMotion} className="h-10 w-full flex items-center justify-between flex-row">
-                <span className="text-neutral-500 text-7">
+            <motion.div variants={socialMotion} className="h-auto lg:h-10 w-full flex flex-col-reverse md:flex-row items-center justify-center md:justify-between gap-4 lg:gap-0 mt-8 lg:mt-0">
+                <span className="text-neutral-500 text-7 text-center lg:text-left">
                     All rights reserved to the site TAWQ 2026
                 </span>
                 <div className="flex flex-row gap-3">

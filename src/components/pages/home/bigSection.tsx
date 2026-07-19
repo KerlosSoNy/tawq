@@ -18,10 +18,10 @@ export default function BigSection() {
         restDelta: 0.001
     });
 
-    const bgScale = useTransform(smoothProgress, [0, 1], [1, 1.15]);
+    const bgScale = useTransform(smoothProgress, [0, 1], [1, 1.4]);
 
     const surfaceX = useTransform(smoothProgress, [0, 1], ["-10%", "5%"]);
-    const surfaceY = useTransform(smoothProgress, [0, 1], ["0%", "-15%"]);
+    const surfaceY = useTransform(smoothProgress, [0, 1], ["0%", "-5%"]);
 
     const hiddenTitleScale = useTransform(smoothProgress, [0, 0.5, 1], [0.85, 1, 1.1]);
     const hiddenTitleOpacity = useTransform(smoothProgress, [0, 0.3, 0.8, 1], [0.03, 0.15, 0.15, 0.05]);
@@ -111,26 +111,25 @@ export default function BigSection() {
         },
     }
 
-
-
     return (
         <motion.div
+            id="Main-big-section"
             ref={sectionRef}
             key='Main-big-section'
             initial="offscreen"
             whileInView="onscreen"
             variants={container}
-            viewport={{ once: true, amount: 0.3 }}
-            className="relative w-full min-h-[2529px] pt-66 flex flex-col overflow-hidden"
+            viewport={{ once: true }}
+            className="relative max-w-screen w-full pb-16 2xl:min-h-[2299px] 3xl:min-h-[2529px] pt-40 md:pt-66 flex flex-col overflow-hidden"
         >
-            <div className="w-full rotate-180 absolute top-0 z-6 h-125 bg-linear-to-b from-primary-400/0 to-secondary2-400" />
-            <div className="w-full rotate-180 absolute top-0 z-2 h-125 bg-linear-to-b from-primary-400/0 to-secondary2-400" />
+            <div className="w-full rotate-180 absolute top-0 z-6 h-120 3xl:h-125 bg-linear-to-b from-primary-400/0 to-secondary2-400" />
+            <div className="w-full rotate-180 absolute top-0 z-2 h-120 3xl:h-125 bg-linear-to-b from-primary-400/0 to-secondary2-400" />
 
             <motion.div
                 key="Surface"
                 variants={surface}
                 style={{ x: surfaceX, y: surfaceY }}
-                className="absolute w-266.5 h-256.75 top-10 -left-80.25 z-4 overflow-hidden will-change-transform"
+                className="absolute w-120 lg:w-220 2xl:w-240.5 3xl:w-266.5 h-136.75 lg:h-236.75 3xl:h-256.75 top-10 -left-20 lg:-left-70.25 2xl:-left-80.25 z-4 overflow-hidden will-change-transform"
             >
                 <Image
                     src="/images/home/surface.png"
@@ -141,50 +140,49 @@ export default function BigSection() {
                 />
             </motion.div>
 
-            {/* Hidden Title — breathes with scroll */}
             <motion.span
                 key='hiddenTitle'
                 variants={hiddenTitle}
                 style={{ scale: hiddenTitleScale, opacity: hiddenTitleOpacity }}
-                className="font-galderglynn absolute top-22 w-fit left-[9%] font-bold text-[300px] faqs-text z-2 will-change-transform pointer-events-none"
+                className="font-galderglynn absolute top-22 w-fit left-[15%] xl:left-[6%] 3xl:left-[9%] font-bold text-[70px] md:text-[140px] xl:text-[240px] 3xl:text-[300px] faqs-text z-2 will-change-transform pointer-events-none"
             >
                 About us
             </motion.span>
 
-            <div className="flex flex-col ps-70 mx-auto z-15">
-                <motion.div variants={title} className="flex flex-col items-start max-w-217.5 relative ms-52 text-white font-galderglynn">
+            <div className="flex flex-col pe-10 md:pe-0 ps-10 lg:ps-70 mx-auto z-15">
+                <motion.div variants={title} className="flex flex-col items-start md:max-w-165 3xl:max-w-217.5 relative md:ms-52 text-white font-galderglynn">
                     <svg width="120" height="12" viewBox="0 0 120 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0.750244 4.15267L17.37 9.15267L37.3136 0.819336L58.9193 10.8193L77.2009 2.486L100.469 9.15267L118.75 2.486" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
                     </svg>
-                    <span className="text-[80px] font-bold leading-24 mt-6">Redefining Aquatic Leisure.</span>
+                    <span className="text-[38px] md:text-[50px] lg:text-[60px] 3xl:text-[80px] font-bold leading-14 md:leading-18 3xl:leading-24 mt-6">Redefining Aquatic Leisure.</span>
                 </motion.div>
 
-                <div className="flex flex-row items-start ms-20 mt-15.5 gap-42.5 relative">
+                <div className="flex flex-col md:flex-row items-start -ms-5 xl:ms-10 3xl:ms-20 mt-15.5 gap-20 2xl:gap-30 3xl:gap-42.5 relative">
                     <motion.div
-                        className=" w-106.25 h-135.5 overflow-visible! relative"
+                        className="mx-auto w-66.25 xl:w-86.25 3xl:w-106.25 h-85.5 xl:h-115.5 3xl:h-135.5 overflow-visible! relative"
                     >
-                        <motion.div variants={imageReveal} className="w-106.25 h-135.5 overflow-visible! relative">
+                        <motion.div variants={imageReveal} className="w-80 xl:w-106.25 h-115.5 xl:h-135.5 overflow-visible! relative">
                             <Image
                                 src="/images/home/topBig.png"
                                 alt="Gallery"
                                 width={425}
                                 height={542}
-                                className="object-cover z-5 relative"
+                                className="object-cover w-66.25 xl:w-86.25 3xl:w-106.25 h-85.5 xl:h-115.5 3xl:h-135.5 z-5 relative"
                             />
                         </motion.div>
-                        <svg className="absolute bottom-26 -right-15 z-6" width="120" height="12" viewBox="0 0 120 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg className="absolute bottom-20 3xl:bottom-26 -right-10 xl:-right-15 z-6 w-20 xl:w-30" width="120" height="12" viewBox="0 0 120 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0.750244 4.15267L17.37 9.15267L37.3136 0.819336L58.9193 10.8193L77.2009 2.486L100.469 9.15267L118.75 2.486" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
                         </svg>
-                        <svg className="absolute bottom-8 -right-15 z-1" width="120" height="12" viewBox="0 0 120 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg className="absolute bottom-4 3xl:bottom-8 -right-10 xl:-right-15 z-1 w-20 xl:w-30" width="120" height="12" viewBox="0 0 120 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0.750244 4.15267L17.37 9.15267L37.3136 0.819336L58.9193 10.8193L77.2009 2.486L100.469 9.15267L118.75 2.486" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
                         </svg>
                     </motion.div>
 
-                    <div className="flex flex-col w-143.25 pt-11 relative z-10">
-                        <motion.span key="subTitle-1" variants={subTitle} className="text-5 text-white opacity-100 leading-8 z-5 relative">
+                    <div className="flex flex-col w-100.25 2xl:w-113.25 3xl:w-143.25 pt-2 2xl:pt-11 relative z-10">
+                        <motion.span key="subTitle-1" variants={subTitle} className="text-[16px] md:text-[14px] 2xl:text-[16px] 3xl:text-5 text-white opacity-100 leading-6 3xl:leading-8 z-5 relative">
                             TAWQ Entertainment is the experiential side of the brand, where technology is used to create immersive, large-scale, and emotionally driven experiences. We focuses on transforming spaces through water sport, light, motion, and digital interaction delivering moments that feel futuristic, cinematic, and memorable Rather than showcasing technology itself,
                         </motion.span>
-                        <motion.span key="subTitle-2" variants={subTitle2} className="text-5 text-white opacity-100 leading-8 mt-11 z-5 relative">
+                        <motion.span key="subTitle-2" variants={subTitle2} className="text-[16px] md:text-[14px] 2xl:text-[16px] 3xl:text-5 text-white opacity-100 leading-6 3xl:leading-8 mt-11 z-5 relative">
                             TAWQ Entertainment uses it as a gateway to another world, blending innovation with imagination to create experiences that are felt, not just seen
                         </motion.span>
                         <motion.button
