@@ -61,7 +61,7 @@ export default function BannerContactUs() {
                 muted
                 className="w-full h-full absolute top-0 object-cover"
             />
-            <div className='flex flex-col lg:flex-row relative  w-full px-3 md:px-10 items-start lg:items-end z-14 mt-0 md:-mt-8 lg:-mt-12 xl:-mt-18 2xl:-mt-22 3xl:-mt-26 gap-6 md:gap-8 xl:gap-22 2xl:gap-28'>
+            <div className='flex flex-col lg:flex-row relative  w-full px-3 md:px-10 items-start lg:items-end justify-center z-14 mt-0 md:-mt-8 lg:-mt-12 xl:-mt-18 2xl:-mt-22 3xl:-mt-26 gap-6 md:gap-8 xl:gap-22 2xl:gap-28'>
                 <ContactForm />
                 <motion.div variants={mainSection} className="flex flex-col max-w-full lg:max-w-100">
                     <div className="flex flex-row items-start gap-3 text-5 font-normal text-white lg:max-w-90">

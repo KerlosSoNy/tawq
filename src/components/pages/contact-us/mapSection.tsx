@@ -149,7 +149,7 @@ export default function MapSection() {
         <motion.div variants={topToDown} className="flex flex-col w-full lg:max-w-134.5 relative mt-0 md:mt-22 lg:mt-0  z-10">
           <div className="flex flex-row items-center gap-3">
             <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16.0012 8.5006C16.0012 12.6431 12.6431 16.0012 8.5006 16.0012M16.0012 8.5006C16.0012 4.35813 12.6431 1 8.5006 1M16.0012 8.5006H13.001M8.5006 16.0012C4.35813 16.0012 1 12.6431 1 8.5006M8.5006 16.0012V13.001M8.5006 1C4.35813 1 1 4.35813 1 8.5006M8.5006 1V4.00024M1 8.5006H4.00024" stroke="#347778" stroke-width="2" stroke-linecap="round" />
+              <path d="M16.0012 8.5006C16.0012 12.6431 12.6431 16.0012 8.5006 16.0012M16.0012 8.5006C16.0012 4.35813 12.6431 1 8.5006 1M16.0012 8.5006H13.001M8.5006 16.0012C4.35813 16.0012 1 12.6431 1 8.5006M8.5006 16.0012V13.001M8.5006 1C4.35813 1 1 4.35813 1 8.5006M8.5006 1V4.00024M1 8.5006H4.00024" stroke="#347778" strokeWidth="2" strokeLinecap="round" />
             </svg>
             <span className="text-netural-black text-7 md:text-5 font-bold font-galderglynn">
               Latitude 26.3° N | Longitude 43.9° E
