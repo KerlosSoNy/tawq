@@ -48,7 +48,7 @@ export default function Footer() {
             initial="offscreen"
             whileInView="onscreen"
             variants={container}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.2 }}
             className='py-10 px-5 sm:px-8 md:px-8 lg:py-15.5 3xl:px-31 gap-6 flex flex-col w-full bg-[#f3f3f3]'>
             <div className="flex flex-col lg:flex-row gap-10 3xl:gap-26.5 justify-between items-center lg:items-start">
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3">
