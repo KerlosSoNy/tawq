@@ -47,12 +47,11 @@ export default function MidSection() {
             key='Main-banner-container'
             initial="offscreen"
             whileInView="onscreen"
+            data-nav-bg="dark"
             variants={container}
-            viewport={{ once: true }}
-            className="w-full pb-10 xl:pb-0  xl:min-h-260 2xl:min-h-300 3xl:min-h-329 relative pt-10 bg-secondary2-400 -mt-px">
-            <div className="absolute top-0 w-full h-full bg-linear-to-b from-primary-300/50 to-secondary-300/50 
-         z-4" />
-            {/* <div className="absolute w-full h-full inset-0 bg-[url('/images/home/bg-why.png')] mix-blend-soft-light bg-cover z-2"/> */}
+            viewport={{ once: true, amount: 0.3 }}
+            className="w-full pb-10 xl:pb-0  xl:min-h-260 2xl:min-h-300 3xl:min-h-329 relative pt-10 -mt-px">
+            <div className="absolute top-0 left-0 w-full h-full layerGradient z-3" />
 
             <video
                 src="/videos/midSectionHome.mp4"
@@ -150,7 +149,6 @@ export default function MidSection() {
             </div>
 
             <div className="w-full absolute top-0 z-6 h-180 bg-linear-to-b to-[#002023]/0 from-[#002125]" />
-            <div className="w-full absolute bottom-0 z-6 h-[90%] bg-linear-to-b opacity-50 from-primary-300/0  to-secondary-300" />
             <div className="w-full absolute -bottom-1 z-6 h-200 bg-linear-to-b opacity-100 from-[#002023]/0 to-secondary2-400 to-90%" />
 
             <svg className="absolute w-full min-h-25 -bottom-13.5 md:-bottom-14.5 left-0" width="1920" height="99" viewBox="0 0 1920 99" fill="none" xmlns="http://www.w3.org/2000/svg">

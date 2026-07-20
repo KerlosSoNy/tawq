@@ -113,13 +113,14 @@ export default function BigSection() {
 
     return (
         <motion.div
-            id="Main-big-section"
+            id="about-us"
             ref={sectionRef}
             key='Main-big-section'
             initial="offscreen"
+            data-nav-bg="dark"
             whileInView="onscreen"
             variants={container}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             className="relative max-w-screen w-full pb-16 2xl:min-h-[2299px] 3xl:min-h-[2529px] pt-40 md:pt-66 flex flex-col overflow-hidden"
         >
             <div className="w-full rotate-180 absolute top-0 z-6 h-120 3xl:h-125 bg-linear-to-b from-primary-400/0 to-secondary2-400" />

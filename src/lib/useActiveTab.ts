@@ -6,6 +6,8 @@ const pathToTabIndex: Record<string, number> = {
     "/about-us": 1,
     "/experience": 2,
     "/packages": 3,
+    "/contact-us": 4,
+    "/faqs": 5,
   
 };
 

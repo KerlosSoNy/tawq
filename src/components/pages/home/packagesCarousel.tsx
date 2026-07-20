@@ -19,8 +19,9 @@ export default function PackagesCarousel() {
     const [progress, setProgress] = useState(0);
 
     const totalSlides = PACKAGES.length;
-    const width = document.documentElement.clientWidth;
     const updateProgress = (swiper: any) => {
+        const width = typeof window !== 'undefined' ? window.innerWidth : 0;
+
         if (width < 620) {
             setProgress(((swiper.activeIndex + 1) / (totalSlides)) * 100);
         } else {

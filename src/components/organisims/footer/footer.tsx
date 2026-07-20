@@ -79,7 +79,7 @@ export default function Footer() {
                                 <Link
                                     key={link.label}
                                     href={link.href}
-                                    className="p-2 text-[14px] 3xl:text-5 text-neutral-500"
+                                    className="p-2 text-[14px] 2xl:text-5 text-neutral-500"
                                 >
                                     {link.label}
                                 </Link>

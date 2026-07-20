@@ -75,7 +75,8 @@ export default function InstagramGallery({ posts }: InstagramGalleryProps) {
             initial="offscreen"
             whileInView="onscreen"
             variants={container}
-            viewport={{ once: true, amount: 0.1 }}
+            data-nav-bg="white"
+            viewport={{ once: true, amount: 0.2 }}
             className="relative w-full overflow-hidden 2xl:py-16 2xl:pb-24 3xl:pt-16" >
             <div className="relative mx-auto w-full">
                 <div

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePageTransition } from '@/lib/UsePageTransition';
 import { cn } from '@/lib/utils';
 import { link } from '@/types/globals';
+import { useNavTheme } from '@/lib/hooks/useNavTheme';
 
 interface Props {
     active?: boolean,
@@ -16,6 +17,7 @@ interface Props {
 
 const TransitionLink: FC<Props> = ({ active, link, children, onclick }) => {
     const transition = usePageTransition()
+    const isWhiteBg = useNavTheme();
 
     const handleTransition = async (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
         e.preventDefault();
@@ -31,10 +33,11 @@ const TransitionLink: FC<Props> = ({ active, link, children, onclick }) => {
         }}
             href={link.path}
             className={cn(
-                "text-white/60! mx-2.5 uppercase text-[16px] 3xl:text-5 font-bold transition-colors duration-200",
+                "text-white/60! mx-2.5 uppercase text-[16px] 3xl:text-5 font-bold transition-colors duration-500",
                 "hover:text-white! hover:-mb-px hover:border-b hover:border-white",
                 {
-                    "text-white! -mb-px border-b border-white": active
+                    "text-white! -mb-px border-b border-white": active,
+                    "filter-teal": isWhiteBg
                 }
             )}
         >

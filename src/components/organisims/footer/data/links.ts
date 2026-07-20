@@ -6,7 +6,7 @@ export const quickLinks = [
 ];
 
 export const supportLinks = [
-    { label: "Contact", href: "/contact" },
+    { label: "Contact", href: "/contact-us" },
     { label: "FAQs", href: "/faqs" },
     { label: "Terms of services", href: "/terms-of-services" },
     { label: "Privacy policy", href: "/privacy-policy" },

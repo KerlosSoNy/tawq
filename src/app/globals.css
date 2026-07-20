@@ -155,3 +155,19 @@ body {
 .packages-box-shadow{
   box-shadow: 0 8px 16px 0 rgba(164, 164, 164, 0.30);
 }
+
+
+.layerGradient{
+  opacity: 0.5;
+  background: linear-gradient(268deg, var(--Foundation-Primay-B300, #55C3C5) 1.33%, var(--Foundation-Secoundry-01-B300, #3F9FD8) 98.67%);
+  mix-blend-mode: hard-light;
+}
+
+.filter-teal {
+  transition: filter 0.3s ease;
+  filter: invert(51%) sepia(51%) saturate(393%) hue-rotate(132deg) brightness(72%) contrast(95%);
+}
+
+button{
+  cursor: pointer;
+}

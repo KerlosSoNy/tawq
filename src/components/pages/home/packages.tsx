@@ -76,8 +76,9 @@ export default function Packages() {
             key='Main-Packages-container'
             initial="offscreen"
             whileInView="onscreen"
+            data-nav-bg="white"
             variants={container}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             className="min-h-fit pb-10 px-3 md:px-10 lg:px-0 lg:pb-0 lg:min-h-240 3xl:min-h-270 relative pt-40 md:pt-45 3xl:pt-80 max-w-full overflow-hidden -mb-20 flex flex-col items-start lg:items-center">
             <div className="absolute w-120 md:w-160 xl:w-220.75 3xl:w-241.75 h-100 md:h-130 xl:h-180 3xl:h-210.75 -top-6 md:top-0 xl:-top-4 z-2 right-[-38%] md:right-[-24%] 3xl:right-[-14%] rotate-45">
                 <motion.div variants={image} className="relative w-full h-full">

@@ -5,13 +5,14 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { staticLinks } from "@/components/organisims/navbar/data/links";
+import { useNavTheme } from "@/lib/hooks/useNavTheme";
 
 export default function Navbar() {
-
+    const isWhiteBg = useNavTheme();
     const [activeTab, setActiveTab] = useState<number>(0);
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
     const menuRef = useRef<HTMLDivElement>(null);
-
+    const menuButtonRef = useRef<HTMLButtonElement>(null);
     const handleActiveTab = (index: number) => {
         if (activeTab === index) return;
         setActiveTab(index);
@@ -31,7 +32,12 @@ export default function Navbar() {
         if (!isMenuOpen) return;
 
         const handleClickOutside = (e: MouseEvent) => {
-            if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+            if (
+                menuRef.current &&
+                !menuRef.current.contains(e.target as Node) &&
+                menuButtonRef.current &&
+                !menuButtonRef.current.contains(e.target as Node)
+            ) {
                 setIsMenuOpen(false);
             }
         };
@@ -42,10 +48,11 @@ export default function Navbar() {
 
     return (
         <div className="fixed z-100 top-0 left-0 w-screen">
-            <div className="h-22 3xl:h-25.5 w-full px-4 md:px-10 3xl:px-20 flex flex-row items-center justify-between bg-white/12 backdrop-blur-2xl">
+            <div className={`h-22 3xl:h-25.5 w-full px-4 md:px-10 3xl:px-20 flex flex-row items-center justify-between  ${isWhiteBg ? "bg-white/36" : "bg-white/12"} backdrop-blur-2xl`}>
                 <div className="flex flex-row items-center gap-10">
                     <Link
                         href="/"
+                        className={`${isWhiteBg && "filter-teal"}`}
                     >
                         <Image
                             src="/images/logos/logo.png"
@@ -53,7 +60,7 @@ export default function Navbar() {
                             width={140}
                             height={78}
                             loading="eager"
-                            className="w-24 h-auto xl:w-35"
+                            className="w-24 h-auto xl:w-35 "
                         />
                     </Link>
 
@@ -90,10 +97,10 @@ export default function Navbar() {
                             />
                         </div>
                         <div className="flex flex-col items-start">
-                            <span className="text-white/50 text-[14px] 3xl:text-6">
+                            <span className={`text-white/50 text-[14px] 3xl:text-6 ${isWhiteBg && "text-black/50!"}`}>
                                 Phone
                             </span>
-                            <span className="font-bold text-[16px] 3xl:text-5 text-white -mt-0.5">
+                            <span className={`font-bold text-[16px] 3xl:text-5 text-white -mt-0.5 ${isWhiteBg && "filter-teal"}`}>
                                 0539320709
                             </span>
                         </div>
@@ -101,10 +108,11 @@ export default function Navbar() {
                 </div>
 
                 <button
-                    className="xl:hidden relative z-10 w-10 h-10 flex flex-col items-center justify-center gap-1.5 cursor-pointer"
+                    className={`xl:hidden relative focus:outline-0 focus:ring-0 focus:border-0 z-10 w-10 h-10 flex flex-col items-center justify-center gap-1.5 cursor-pointer ${isWhiteBg && "filter-teal"}`}
                     onClick={() => {
                         handleClickMenu();
                     }}
+                    ref={menuButtonRef}
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     aria-expanded={isMenuOpen}
                 >
@@ -150,10 +158,10 @@ export default function Navbar() {
                             />
                         </div>
                         <div className="flex flex-col items-start">
-                            <span className="text-white/50 text-6">
+                            <span className={`text-white/50 text-6 ${isWhiteBg && "text-black/50!"}`}>
                                 Phone
                             </span>
-                            <span className="font-bold text-5 text-white -mt-0.5">
+                            <span className={`font-bold text-5 text-white -mt-0.5 ${isWhiteBg && "filter-teal"}`}>
                                 0539320709
                             </span>
                         </div>
