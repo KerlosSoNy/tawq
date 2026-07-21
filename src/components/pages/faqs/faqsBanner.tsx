@@ -55,9 +55,9 @@ export default function FaqsBanner() {
             className="w-screen h-screen relative pt-40 ">
             <div className="absolute top-0 left-0 w-full h-full layerGradient z-3" />
             <div className="ps-10 xl:ps-18 flex flex-col relative z-10">
-                <motion.div variants={mainTitle} className="text-[30px] md:text-[60px] lg:text-[80px] 2xxl:text-[120px] 3xl:text-[146px] font-galderglynn w-fit font-bold text-white leading-none tracking-tight">
+                <motion.div variants={mainTitle} className="text-[48px] md:text-[60px] lg:text-[80px] 2xxl:text-[120px] 3xl:text-[146px] font-galderglynn w-fit font-bold text-white leading-none tracking-tight">
                     Frequently
-                    <span className="leading-none tracking-tight flex flex-wrap gap-2 md:gap-4">
+                    <span className="leading-none tracking-tight flex flex-wrap gap-0 mt-1 md:mt-0 md:gap-4">
                         <span
                             className="text-transparent"
                             style={{ WebkitTextStroke: "1.5px white" }}

@@ -4,6 +4,7 @@ import SecondSection from './secondSection'
 import * as motion from "motion/react-client"
 import { Variants, useScroll, useTransform, useSpring } from "motion/react";
 import { useRef } from 'react';
+import SeaParticles from '../packages/bubbles';
 
 export default function BigSection() {
     const sectionRef = useRef<HTMLDivElement>(null);
@@ -125,7 +126,7 @@ export default function BigSection() {
         >
             <div className="w-full rotate-180 absolute top-0 z-6 h-120 3xl:h-125 bg-linear-to-b from-primary-400/0 to-secondary2-400" />
             <div className="w-full rotate-180 absolute top-0 z-2 h-120 3xl:h-125 bg-linear-to-b from-primary-400/0 to-secondary2-400" />
-
+            <SeaParticles />
             <motion.div
                 key="Surface"
                 variants={surface}

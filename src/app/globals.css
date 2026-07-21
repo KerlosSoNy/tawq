@@ -162,12 +162,36 @@ body {
   background: linear-gradient(268deg, var(--Foundation-Primay-B300, #55C3C5) 1.33%, var(--Foundation-Secoundry-01-B300, #3F9FD8) 98.67%);
   mix-blend-mode: hard-light;
 }
+.layerGradient-packages{
+  background: linear-gradient(180deg, rgba(14, 85, 136, 0.00) 0%, var(--Foundation-Secoundry-2-G400, #004C54) 100%);
+}
+.layerGradient-choosePackage{
+  background: linear-gradient(180deg, rgba(14, 85, 136, 0.00) 0%, var(--Foundation-Secoundry-2-G400, #004C54) 100%);
+}
 
 .filter-teal {
   transition: filter 0.3s ease;
   filter: invert(51%) sepia(51%) saturate(393%) hue-rotate(132deg) brightness(72%) contrast(95%);
 }
 
+.packages-card{
+  border-radius: var(--Raduis-12, 12px);
+  background: rgba(255, 255, 255, 0.24);
+  box-shadow: 4px 12px 40px 0 rgba(255, 255, 255, 0.25) inset, 0 8px 16px 0 rgba(164, 164, 164, 0.30);
+  backdrop-filter: blur(12px);
+}
+
 button{
   cursor: pointer;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+input[type="time"]::-webkit-inner-spin-button,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
 }

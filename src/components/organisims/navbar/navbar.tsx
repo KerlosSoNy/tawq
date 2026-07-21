@@ -80,12 +80,12 @@ export default function Navbar() {
 
                 {/* Desktop right side */}
                 <div className="hidden xl:flex flex-row items-center gap-6">
-                    <button className="relative w-50 3xl:w-59 h-12 3xl:h-14 flex items-center gap-1.5 justify-center rounded-sm overflow-hidden group cursor-pointer">
+                    <Link href={'/contact-us'} aria-label="Get in Touch With Us And Call Us Right" className="relative w-50 3xl:w-59 h-12 3xl:h-14 flex items-center gap-1.5 justify-center rounded-sm overflow-hidden group cursor-pointer">
                         <span className="absolute inset-0 bg-linear-to-l from-primary-300 to-secondary-300" />
                         <span className="absolute inset-0 bg-linear-to-l from-secondary-300 to-secondary-300 opacity-0 group-hover:opacity-100 transition-opacity duration-600" />
                         <Image src="/images/icons/phone.svg" alt="Tawq Logo" width={24} height={24} className="relative z-10" />
                         <span className="relative z-10 uppercase text-[16px] 3xl:text-5 font-bold text-white">Get in touch</span>
-                    </button>
+                    </Link>
 
                     <div className="flex flex-row items-center gap-2 3xl:gap-4">
                         <div className="flex items-center justify-center bg-secondary-300 w-10 h-10 rounded-sm">

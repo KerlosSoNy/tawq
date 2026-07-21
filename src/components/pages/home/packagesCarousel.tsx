@@ -5,6 +5,7 @@ import { Variants } from "motion/react";
 import "swiper/swiper-bundle.css";
 import { useRef, useState } from 'react';
 import Image from 'next/image';
+import BookNowButton from '../packages/popup/BookNow';
 
 const PACKAGES = [
     { title: 'Starter', price: '$19/mo', desc: 'For small teams getting going.' },
@@ -125,11 +126,7 @@ export default function PackagesCarousel() {
                                             </div>
                                         </div>
                                         <span className="text-neutral-500 shrink-0 text-6 font-normal">Perfect for first-time visitors</span>
-                                        <button className="relative w-full h-11 shrink-0  flex items-center mt-3 rounded-sm gap-1.5 justify-center border border-primary-100 overflow-hidden group cursor-pointer ">
-                                            <span className="absolute inset-0 bg-primary-50" />
-                                            <span className="absolute inset-0 bg-linear-to-l from-primary-300 to-secondary-300 opacity-0 group-hover:opacity-100 transition-opacity duration-600" />
-                                            <span className="relative z-10 uppercase text-6 font-bold text-neutral-black group-hover:text-white duration-500 transition-colors ease-in-out">Book Now</span>
-                                        </button>
+                                        <BookNowButton />
                                         <div className="flex flex-col p-4 gap-2 mt-3 rounded-xl border border-neutral-400 bg-white/12">
                                             <span className="font-normal text-7 text-neutral-500">Include</span>
                                             <div className="flex flex-row items-center gap-3">

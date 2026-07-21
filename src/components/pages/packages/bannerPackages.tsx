@@ -3,7 +3,8 @@ import Link from 'next/link'
 import * as motion from "motion/react-client"
 import { Variants } from "motion/react";
 import DiveButton from '@/components/atoms/diveButton';
-export default function HomeBanner() {
+
+export default function PackagesBanner() {
     const container: Variants = {
         offscreen: {},
         onscreen: {
@@ -23,20 +24,6 @@ export default function HomeBanner() {
             transition: { type: "spring", bounce: 0.6, duration: 1 },
         },
     }
-
-    const subTitle: Variants = {
-        offscreen: { y: -300, opacity: 0 },
-        onscreen: {
-            y: [null, -20, 0],
-            x: [null, -20, 0],
-            opacity: [null, 1, 1],
-            transition: {
-                ease: [0.34, 1.56, 0.64, 1],
-                duration: 3,
-            },
-        },
-    }
-
 
     const socialMotion: Variants = {
         offscreen: { y: -300, opacity: 0 },
@@ -64,28 +51,24 @@ export default function HomeBanner() {
             variants={container}
             viewport={{ once: true, amount: 0.5 }}
             className="w-screen h-screen relative pt-40 ">
-            <div className="ps-3 md:ps-10 xl:ps-18 flex flex-col relative z-10">
-
-                <motion.div variants={mainTitle} className="text-[40px] md:text-[60px] lg:text-[80px] 2xxl:text-[120px] 3xl:text-[146px] font-galderglynn w-fit font-bold text-white leading-none tracking-tight">
-                    WHERE WATER MEETS
-                    <span className="leading-none tracking-tight flex md:flex-wrap gap-2 md:gap-4">
-                        <span className="text-white">PURE</span>
+            <div className="absolute top-0 left-0 w-full h-full layerGradient z-3" />
+            <div className="ps-10 xl:ps-18 flex flex-col relative z-10">
+                <motion.div variants={mainTitle} className="text-[48px] md:text-[60px] lg:text-[80px] 2xxl:text-[120px] 3xl:text-[146px] font-galderglynn w-fit font-bold text-white leading-none tracking-tight">
+                    Unlock Your
+                    <span className="leading-none tracking-tight flex flex-wrap gap-2 md:gap-4">
                         <span
-                            className="text-transparent ms-1 md:ms-2"
+                            className="text-transparent ms-1 md:ms-4"
                             style={{ WebkitTextStroke: "1.5px white" }}
                         >
-                            EXCITEMENT.
+                            Adventure
                         </span>
+                        <span className="text-white ms-1">Awaits</span>
                     </span>
                 </motion.div>
-                <motion.small variants={subTitle} className="max-w-108.75 font-normal text-white text-[14px] 3xl:text-5 mt-4 md:mt-12 3xl:mt-20">
-                    Discover premium aquatic entertainment designed for unforgettable group gatherings, celebrations, and corporate escapes.
-                </motion.small>
             </div>
 
-            <div className="absolute top-0 w-full h-full bg-linear-to-b from-primary-300/50 to-secondary-300/50 opacity-75 z-4" />
             <video
-                src="/videos/Hero-Home.mp4"
+                src="/videos/packages-banner.mp4"
                 autoPlay
                 loop
                 muted
