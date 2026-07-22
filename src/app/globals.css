@@ -158,7 +158,7 @@ body {
 
 
 .layerGradient{
-  opacity: 0.5;
+  opacity: 0.6;
   background: linear-gradient(268deg, var(--Foundation-Primay-B300, #55C3C5) 1.33%, var(--Foundation-Secoundry-01-B300, #3F9FD8) 98.67%);
   mix-blend-mode: hard-light;
 }

@@ -80,7 +80,7 @@ export default function FaqsSection() {
             </motion.div>
 
 
-            <div className="absolute w-130! 3xl:w-195! h-210.75! xl:block hidden top-2 3xl:top-24 right-30 3xl:right-40 z-2 -rotate-30 ">
+            <div className="absolute w-130! 3xl:w-195! h-210.75! xl:block hidden top-2 3xl:top-24 right-30 3xl:right-40 z-10 -rotate-30 ">
                 <motion.div variants={mainImage} className="relative w-full h-full">
                     <Image
                         fill

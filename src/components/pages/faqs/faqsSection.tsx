@@ -51,7 +51,7 @@ export default function FaqsSectionMain({ activeTap }: { activeTap: string }) {
             viewport={{ once: true, amount: 0.2 }}
             className="flex flex-col max-w-full overflow-hidden relative h-fit min-h-125 px-3 md:px-10 3xl:px-20 py-20">
 
-            <div className="absolute w-130! 3xl:w-195! h-210.75! xl:block hidden top-2 3xl:top-24 right-20 3xl:right-40 z-2 -rotate-30 ">
+            <div className="absolute w-130! 3xl:w-195! h-210.75! xl:block hidden top-2 3xl:top-24 right-20 3xl:right-40 z-10 -rotate-30 ">
                 <motion.div variants={mainImage} className="relative w-full h-full">
                     <Image
                         fill

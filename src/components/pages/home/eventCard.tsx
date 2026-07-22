@@ -1,6 +1,7 @@
 import Image from "next/image";
 import * as motion from "motion/react-client"
 import { Variants } from "motion/react";
+import Link from "next/link";
 export default function EventCard({ event }: {
     event: {
         title: string;
@@ -18,6 +19,7 @@ export default function EventCard({ event }: {
             transition: { type: "spring", bounce: 0.3, duration: 1.2 },
         },
     }
+
     return (
         <motion.div variants={imageReveal} className="w-full h-80 lg:h-100 xl:h-120 2xl:h-140 3xl:h-158.5  rounded-xl overflow-hidden flex flex-col justify-end p-3 xl:p-6 relative group">
             <Image
@@ -36,7 +38,7 @@ export default function EventCard({ event }: {
                     ))
                 }
             </span>
-            <div className="translate-y-full group-hover:translate-y-0 mt-1 absolute top-0 left-0 w-full h-full z-4 bg-black/20 duration-700 transition-all flex flex-col items-center justify-center" >
+            <div className="translate-y-full group-hover:translate-y-0 mt-1 absolute top-0 left-0 w-full h-full z-10 bg-black/20 duration-700 transition-all flex flex-col items-center justify-center" >
                 <span className='font-bold font-galderglynn text-2 3xl:text-1 flex flex-col items-center text-center text-white/30 relative z-10'>
                     {
                         event.title.split(' ').map((word, index) => (
@@ -46,10 +48,10 @@ export default function EventCard({ event }: {
                         ))
                     }
                 </span>
-                <div className="flex flex-row items-center gap-2.5 cursor-pointer">
-                    <span className='font-galderglynn text-[14px] 3xl:text-5 text-white'>
-                        DIVE in
-                    </span>
+                <div className="flex flex-row items-center gap-2.5 cursor-pointer z-100 h-fit">
+                    <Link href={'/experience/2'} className='font-galderglynn text-[14px] 3xl:text-5 text-white cursor-pointer'>
+                        Dive in
+                    </Link>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4 12L20 12M14 6L20 12L14 18" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>

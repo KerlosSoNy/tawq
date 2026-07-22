@@ -49,7 +49,7 @@ export default function Subscription() {
             data-nav-bg="white"
             variants={container}
             viewport={{ once: true, amount: 0.4 }}
-            className="w-full h-fit 3xl:h-136.5 flex flex-col items-center text-center lg:text-start relative px-10 3xl:px-30 py-18.5 overflow-hidden">
+            className="w-full h-fit 3xl:h-136.5 max-w-sceen overflow-x-hidden flex flex-col items-center text-center lg:text-start relative px-10 3xl:px-30 py-18.5 overflow-hidden">
             <Image fill src="/images/home/subscription.png" alt="Subscription" className="object-cover" />
 
             <motion.span

@@ -113,7 +113,7 @@ export default function ExperienceBanner() {
                     />
                 </div>
                 <div className="w-px h-20 3xl:h-42.75 border-l border-dashed border-white" />
-                <DiveButton title="Dive in" id="about-us" description="Scroll to About us section" />
+                <DiveButton title="Dive in" id="experience-section" description="Scroll to About us section" />
             </motion.div>
             <div className="w-full absolute bottom-0 z-8 h-89.25 bg-linear-to-b from-primary-400/0 to-secondary2-400" />
             <svg className="w-full h-25 absolute -bottom-14 md:-bottom-11 z-10" width="1920" height="99" viewBox="0 0 1920 99" fill="none" xmlns="http://www.w3.org/2000/svg">

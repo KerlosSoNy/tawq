@@ -1,12 +1,11 @@
 "use client";
 
 import { useId } from "react";
-import { BookingFormData } from "./types";
-import ProgressHeader from "./progressBar";
-import TextField from "./Textfield";
-import PickerInput from "./Pickerinput";
-import SelectField from "./Selectfield";
-import TextareaField from "./Textareafield";
+import { BookingFormData } from "../packages/popup/types";
+import TextField from "../packages/popup/Textfield";
+import SelectField from "../packages/popup/Selectfield";
+import PickerInput from "../packages/popup/Pickerinput";
+import TextareaField from "../packages/popup/Textareafield";
 
 interface BookingFormStepProps {
     formData: BookingFormData;
@@ -60,17 +59,12 @@ export default function BookingFormStep({
 
     return (
         <div
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby={headingId}
-            className="w-screen xl:w-276.5 max-w-[95vw] rounded-2xl bg-white py-5 px-12 shadow-2xl max-h-[90vh] overflow-y-scroll"
+            className="flex flex-col"
         >
-            <ProgressHeader activeStep={2} onClose={onClose} />
-
             <h2 id={headingId} className="text-4 md:text-2 font-bold font-galderglynn text-neutral-black">
-                Tailor Your Experience
+                Reserve Your Adventure
             </h2>
-            <p className="text-5 text-neutral-600 font-normal font-inter">Personalize Your Journey</p>
+            <p className="text-5 text-neutral-600 font-normal font-inter">Reserve your spot today with ease!</p>
 
             <form onSubmit={handleSubmit} className="mt-4 space-y-5.25">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5.25">

@@ -26,7 +26,7 @@ export default function SelectExperienceStep({
             role="dialog"
             aria-modal="true"
             aria-labelledby={headingId}
-            className="w-screen xl:w-276.5 max-w-[95vw] rounded-2xl bg-white p-6 shadow-2xl max-h-[90vh] overflow-y-scroll"
+            className="w-screen xl:w-276.5 max-w-[95vw] rounded-2xl bg-white px-12 py-6 shadow-2xl max-h-[90vh] overflow-y-scroll"
         >
             <ProgressHeader activeStep={1} onClose={onClose} />
 
